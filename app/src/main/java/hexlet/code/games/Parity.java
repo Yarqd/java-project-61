@@ -1,4 +1,7 @@
-package hexlet.code;
+package hexlet.code.games;
+
+import hexlet.code.Cli;
+import hexlet.code.Engine;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -6,10 +9,8 @@ import java.util.Scanner;
 public class Parity {
     public static void parity() {
 
-        System.out.println();
-        System.out.println("Welcome to the Brain Games!");
-        System.out.print("May I have your name? ");
-        String nam = Cli.hello();
+        Engine.hello();
+        String nam = Cli.name();
         System.out.println("Hello, " + nam + "!");
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
         for (int i = 0; i < 3; i++) {
@@ -18,7 +19,7 @@ public class Parity {
             System.out.println("Question: " + randomNumber);
             System.out.print("Your answer: ");
             Scanner scanner = new Scanner(System.in);
-            String response = scanner.next(); //2
+            String response = scanner.next();
             int z = randomNumber % 2;
             if (response.equals("yes") & z == 0) {
                 System.out.println("Correct!");
