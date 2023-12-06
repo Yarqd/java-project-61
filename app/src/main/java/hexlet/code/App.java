@@ -1,6 +1,7 @@
 package hexlet.code;
 
 import hexlet.code.games.Calc;
+import hexlet.code.games.GCD;
 import hexlet.code.games.Parity;
 
 import java.util.Scanner;
@@ -18,6 +19,8 @@ public class App {
             Parity.parity();
         } else if (select.equals("3")) {
             Calc.calc();
+        } else if (select.equals("4")) {
+            GCD.gcd();
         }
     }
 }
