@@ -4,6 +4,7 @@ import hexlet.code.games.Calc;
 import hexlet.code.games.GCD;
 import hexlet.code.games.Parity;
 import hexlet.code.games.Progression;
+import hexlet.code.games.SimpleNumber;
 
 import java.util.Scanner;
 
@@ -24,6 +25,8 @@ public class App {
             GCD.gcd();
         } else if (select.equals("5")) {
             Progression.prog();
+        } else if (select.equals("6")) {
+            SimpleNumber.simple();
         }
     }
 }
