@@ -3,6 +3,7 @@ package hexlet.code;
 import hexlet.code.games.Calc;
 import hexlet.code.games.GCD;
 import hexlet.code.games.Parity;
+import hexlet.code.games.Progression;
 
 import java.util.Scanner;
 
@@ -21,6 +22,8 @@ public class App {
             Calc.calc();
         } else if (select.equals("4")) {
             GCD.gcd();
+        } else if (select.equals("5")) {
+            Progression.prog();
         }
     }
 }
