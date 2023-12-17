@@ -1,17 +1,15 @@
 package hexlet.code.games;
 
-import hexlet.code.Cli;
 import hexlet.code.Engine;
 
 import java.util.Random;
 import java.util.Scanner;
 
 public class Calc {
-    public static void calc() {
+    public String name;
 
-        Engine.hello();
-        String nam = Cli.name();
-        System.out.println("Hello, " + nam + "!");
+    public static void calc() {
+        String a = Engine.hello();
         System.out.println("What is the result of the expression?");
         for (int i = 0; i < 3; i++) {
             Random random = new Random();
@@ -39,9 +37,9 @@ public class Calc {
                 continue;
             }
             System.out.println("'" + response + "' is wrong answer ;(. Correct answer was '" + result + "'.");
-            System.out.println("Let's try again, " + nam + "!");
+            System.out.println("Let's try again, " + a + "!");
             System.exit(0);
         }
-        System.out.println("Congratulations, " + nam + "!");
+        System.out.println("Congratulations, " + a + "!");
     }
 }

@@ -1,16 +1,13 @@
 package hexlet.code.games;
 
-import hexlet.code.Cli;
 import hexlet.code.Engine;
 
 import java.util.Random;
 import java.util.Scanner;
 
-public class GCD {
+public class GCD implements Engine {
     public static void gcd() {
-        Engine.hello();
-        String nam = Cli.name();
-        System.out.println("Hello, " + nam + "!");
+        String a = Engine.hello();
         System.out.println("Find the greatest common divisor of given numbers.");
         for (int i = 0; i < 3; i++) {
             Random random = new Random();
@@ -23,12 +20,12 @@ public class GCD {
             if (findGCD(numberOne, numberTwo) != response) {
                 System.out.println("'" + response + "' is wrong answer ;(. Correct answer was '" + findGCD(numberOne,
                         numberTwo) + "'.");
-                System.out.println("Let's try again, " + nam + "!");
+                System.out.println("Let's try again, " + a + "!");
                 System.exit(0);
             }
             System.out.println("Correct!");
         }
-        System.out.println("Congratulations, " + nam + "!");
+        System.out.println("Congratulations, " + a + "!");
     }
     public static int findGCD(int a, int b) {
         if (b == 0) {

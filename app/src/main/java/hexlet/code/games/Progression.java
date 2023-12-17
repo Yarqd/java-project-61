@@ -1,16 +1,13 @@
 package hexlet.code.games;
 
-import hexlet.code.Cli;
 import hexlet.code.Engine;
 
 import java.util.Random;
 import java.util.Scanner;
 
-public class Progression {
+public class Progression implements Engine {
     public static void prog() {
-        Engine.hello();
-        String nam = Cli.name();
-        System.out.println("Hello, " + nam + "!");
+        String a = Engine.hello();
         System.out.println("What number is missing in the progression?");
         for (int i = 0; i < 3; i++) {
             Random random = new Random();
@@ -39,12 +36,12 @@ public class Progression {
             if (response != correctAnswer) {
                 System.out.println("'" + response + "' is wrong answer ;(. Correct answer was '" + numbers[rand]
                         + "'.");
-                System.out.println("Let's try again, " + nam + "!");
+                System.out.println("Let's try again, " + a + "!");
                 System.exit(0);
             } else {
                 System.out.println("Correct!");
             }
         }
-        System.out.println("Congratulations, " + nam + "!");
+        System.out.println("Congratulations, " + a + "!");
     }
 }
