@@ -1,34 +1,62 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Game;
 
 import java.util.Random;
 import java.util.Scanner;
 
-public class Calc {
+public class Calc implements Game {
+    @Override
+    public String getRules() {
+        return "What is the result of the expression?";
+    }
+    @Override
+    public String[] getDate() {
+        String[] resultArray = new String[1];
+        Random random = new Random();
+        int numberOne = random.nextInt(100);
+        int numberTwo = random.nextInt(100);
+        int arithmetic = random.nextInt(3);
+        String arithmeticSign;
+        int result;
+        if (arithmetic == 0) {
+            arithmeticSign = "+";
+            result = numberOne + numberTwo;
+        } else if (arithmetic == 1) {
+            arithmeticSign = "-";
+            result = numberOne - numberTwo;
+        } else {
+            arithmeticSign = "*";
+            result = numberOne * numberTwo;
+        }
+        System.out.println("Question: " + numberOne + " " + arithmeticSign + " " + numberTwo);
+        resultArray[0] = Integer.toString(result);
+        return resultArray;
+    }
     public String name;
 
     public static void calc() {
         String a = Engine.hello();
         System.out.println("What is the result of the expression?");
         for (int i = 0; i < 3; i++) {
-            Random random = new Random();
-            int numberOne = random.nextInt(100);
-            int numberTwo = random.nextInt(100);
-            int arithmetic = random.nextInt(3);
-            String arithmeticSign;
-            int result;
-            if (arithmetic == 0) {
-                arithmeticSign = "+";
-                result = numberOne + numberTwo;
-            } else if (arithmetic == 1) {
-                arithmeticSign = "-";
-                result = numberOne - numberTwo;
-            } else {
-                arithmeticSign = "*";
-                result = numberOne * numberTwo;
-            }
-            System.out.println("Question: " + numberOne + " " + arithmeticSign + " " + numberTwo);
+//            Random random = new Random();
+//            int numberOne = random.nextInt(100);
+//            int numberTwo = random.nextInt(100);
+//            int arithmetic = random.nextInt(3);
+//            String arithmeticSign;
+//            int result;
+//            if (arithmetic == 0) {
+//                arithmeticSign = "+";
+//                result = numberOne + numberTwo;
+//            } else if (arithmetic == 1) {
+//                arithmeticSign = "-";
+//                result = numberOne - numberTwo;
+//            } else {
+//                arithmeticSign = "*";
+//                result = numberOne * numberTwo;
+//            }
+//            System.out.println("Question: " + numberOne + " " + arithmeticSign + " " + numberTwo);
             System.out.print("Your answer: ");
             Scanner scanner = new Scanner(System.in);
             int response = scanner.nextInt();

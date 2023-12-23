@@ -5,7 +5,7 @@ import hexlet.code.Engine;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Parity implements Engine {
+public class Even implements Engine {
     public static void parity() {
         String a = Engine.hello();
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");

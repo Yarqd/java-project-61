@@ -2,7 +2,7 @@ package hexlet.code;
 
 import hexlet.code.games.Calc;
 import hexlet.code.games.GCD;
-import hexlet.code.games.Parity;
+import hexlet.code.games.Even;
 import hexlet.code.games.Progression;
 import hexlet.code.games.SimpleNumber;
 
@@ -26,7 +26,7 @@ public class App {
                 Cli.name();
                 break;
             case "2":
-                Parity.parity();
+                Even.parity();
                 break;
             case "3":
                 Calc.calc();
