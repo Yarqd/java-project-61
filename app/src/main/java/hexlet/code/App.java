@@ -26,19 +26,19 @@ public class App {
                 Cli.name();
                 break;
             case "2":
-                Even.parity();
+                Engine.run(new Even());
                 break;
             case "3":
-                Calc.calc();
+                Engine.run(new Calc());
                 break;
             case "4":
-                GCD.gcd();
+                Engine.run(new GCD());
                 break;
             case "5":
-                Progression.prog();
+                Engine.run(new Progression());
                 break;
             case "6":
-                SimpleNumber.simple();
+                Engine.run(new SimpleNumber());
                 break;
             default:
                 break;
