@@ -1,10 +1,8 @@
 package hexlet.code.games;
 
-//import hexlet.code.Engine;
 import hexlet.code.Game;
 
 import java.util.Random;
-import java.util.Scanner;
 
 public class Progression implements Game {
     @Override
@@ -25,33 +23,25 @@ public class Progression implements Game {
             numbers[j] = z * ++j;
             --j;
         }
-        System.out.print("Question: ");
+        String task = "";
+//        System.out.print("Question: ");
         for (int q = 0; q < rand; q++) {
-            System.out.print(numbers[q] + " ");
+            task = task + numbers[q] + " ";
+//            System.out.print(numbers[q] + " ");
         }
-        System.out.print(".. ");
+        task = task + ".. ";
+//        System.out.print(".. ");
         for (int q = ++rand; q < numbers.length; q++) {
-            System.out.print(numbers[q] + " ");
+            task = task + numbers[q] + " ";
+//            System.out.print(numbers[q] + " ");
         }
         System.out.println();
-        System.out.print("Your answer: ");
-        Scanner scanner = new Scanner(System.in);
-        int response = scanner.nextInt(); // Ответ
+//        System.out.print("Your answer: ");
+//        Scanner scanner = new Scanner(System.in);
+//        int response = scanner.nextInt(); // Ответ
         int result = numbers[--rand];
-        resultArray[0] = Integer.toString(result);
-        resultArray[1] = Integer.toString(response);
+        resultArray[0] = task;
+        resultArray[1] = Integer.toString(numbers[rand]);
         return resultArray;
     }
 }
-//            if (response != correctAnswer) {
-//                System.out.println("'" + response + "' is wrong answer ;(. Correct answer was '" + numbers[rand]
-//                        + "'.");
-//                System.out.println("Let's try again, " + a + "!");
-//                System.exit(0);
-//            } else {
-//                System.out.println("Correct!");
-//            }
-//        }
-//        System.out.println("Congratulations, " + a + "!");
-//    }
-//}

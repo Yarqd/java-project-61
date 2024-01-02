@@ -23,7 +23,7 @@ public class App {
         String select = scanner.next();
         switch (select) {
             case "1":
-                Cli.name();
+                Cli.showGreetin();
                 break;
             case "2":
                 Engine.run(new Even());

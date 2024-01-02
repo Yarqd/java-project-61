@@ -1,17 +1,15 @@
 package hexlet.code.games;
 
-//import hexlet.code.Engine;
 import hexlet.code.Game;
 
 import java.util.Random;
-import java.util.Scanner;
 
 public class SimpleNumber implements Game {
-    public static String result(int a) {
-        String result = "yes";
+    public static boolean result(int a) {
+        boolean result = true;
         for (int j = 2; j < a / 2; j++) {
             if (a % j == 0) {
-                result = "no";
+                result = false;
             }
         }
         return result;
@@ -27,31 +25,18 @@ public class SimpleNumber implements Game {
         String[] resultArray = new String[2];
         Random random = new Random();
         int x = random.nextInt(4997) + 2; // x - наше число
-        //String correctAnswer = "yes";
-        System.out.println("Question: " + x);
-        System.out.print("Your answer: ");
-        Scanner scanner = new Scanner(System.in);
-        String response = scanner.next(); // Ответ игрока
-        resultArray[0] = result(x);
-        resultArray[1] = response;
+//        System.out.println("Question: " + x);
+//        System.out.print("Your answer: ");
+//        Scanner scanner = new Scanner(System.in);
+//        String response = scanner.next(); // Ответ игрока
+        String finalResponse = "yes";
+        boolean bol = result(x);
+        if (bol == false) {
+            finalResponse = "no";
+        }
+        resultArray[0] = Integer.toString(x);
+        resultArray[1] = finalResponse;
         return resultArray;
     }
 }
 
-//            for (int j = 2; j < x / 2; j++) {
-//                if (x % j == 0) {
-//                    correctAnswer = "no";
-//                }
-//            }
-//            if (correctAnswer.equals(response)) {
-//                System.out.println("Correct!");
-//                continue;
-//            }
-//            System.out.println("'" + response + "' " + "is wrong answer ;(. Correct answer was '"
-//                    + correctAnswer + "'.");
-//            System.out.println("Let's try again, " + a + "!");
-//            System.exit(0);
-//        }
-//        System.out.println("Congratulations, " + a + "!");
-//    }
-//}
