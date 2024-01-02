@@ -31,7 +31,7 @@ public class SimpleNumber implements Game {
 //        String response = scanner.next(); // Ответ игрока
         String finalResponse = "yes";
         boolean bol = result(x);
-        if (bol == false) {
+        if (!bol) {
             finalResponse = "no";
         }
         resultArray[0] = Integer.toString(x);
