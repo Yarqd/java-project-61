@@ -17,7 +17,10 @@ public class Calc implements Game {
         int numberOne = random.nextInt(100);
         int numberTwo = random.nextInt(100);
         int result = 0;
-        String[] ops = {"+", "-", "*"};
+        final String add = "+";
+        final String sub = "-";
+        final String multi = "*";
+        String[] ops = {add, sub, multi};
         int arithmetic = random.nextInt(ops.length);
         switch (ops[arithmetic]) {
             case "+":
@@ -30,7 +33,7 @@ public class Calc implements Game {
                 result = numberOne * numberTwo;
                 break;
             default:
-                break;
+                throw new RuntimeException("Something went wrong");
         }
 
 //        Scanner scanner = new Scanner(System.in);
