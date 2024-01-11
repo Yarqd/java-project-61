@@ -23,13 +23,13 @@ public class Calc implements Game {
         String[] ops = {add, sub, multi};
         int arithmetic = random.nextInt(ops.length);
         switch (ops[arithmetic]) {
-            case "+":
+            case add:
                 result = numberOne + numberTwo;
                 break;
-            case "-":
+            case sub:
                 result = numberOne - numberTwo;
                 break;
-            case "*":
+            case multi:
                 result = numberOne * numberTwo;
                 break;
             default:

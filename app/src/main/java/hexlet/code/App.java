@@ -9,6 +9,11 @@ import hexlet.code.games.SimpleNumber;
 import java.util.Scanner;
 
 public class App {
+    private static final String EVEN = "2";
+    private static final String CALC = "3";
+    private static final String GCD = "4";
+    private static final String PROGRESSION = "5";
+    private static final String PRIME = "6";
     public static void main(String[] args) {
         System.out.println("Please enter the game number and press Enter.");
         System.out.println("1 - Greet");
@@ -25,19 +30,19 @@ public class App {
             case "1":
                 Cli.showGreetin();
                 break;
-            case "2":
+            case EVEN:
                 Engine.run(new Even());
                 break;
-            case "3":
+            case CALC:
                 Engine.run(new Calc());
                 break;
-            case "4":
+            case GCD:
                 Engine.run(new GCD());
                 break;
-            case "5":
+            case PROGRESSION:
                 Engine.run(new Progression());
                 break;
-            case "6":
+            case PRIME:
                 Engine.run(new SimpleNumber());
                 break;
             default:

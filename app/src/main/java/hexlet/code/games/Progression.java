@@ -16,8 +16,8 @@ public class Progression implements Game {
 //        int x = random.nextInt(5) + 7; // х - Длинна массива
 //        int z = random.nextInt(17) + 2; // з - Шаг прогрессии
 //        int rand = random.nextInt(x - 1) + 1; // Порядковый номер ячейки массива, которую закрасим
-        int progressionlength = Utils.progressionlength();
-        int progressionStep = Utils.progressionStep();
+        int progressionlength = Utils.getRandomNum(5, 7);
+        int progressionStep = Utils.getRandomNum(2, 17);
         int hiddenCell = Utils.hiddenCell(progressionlength);
 
         int[] numbers = new int[progressionlength];
