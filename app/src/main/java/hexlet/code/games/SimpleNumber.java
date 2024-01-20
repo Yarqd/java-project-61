@@ -20,24 +20,13 @@ public class SimpleNumber implements Game {
     }
 
     @Override
-    public String[] getData() {
-        String[] resultArray = new String[2];
-        int num = Utils.getRandomNum(2, 4997);
-        resultArray[0] = Integer.toString(num);
-        resultArray[1] = result(num) ? "yes" : "no";
-        //Random random = new Random();
-        //int x = random.nextInt(4997) + 2; // x - наше число
-//        System.out.println("Question: " + x);
-//        System.out.print("Your answer: ");
-//        Scanner scanner = new Scanner(System.in);
-//        String response = scanner.next(); // Ответ игрока
-        //String finalResponse = "yes";
-        //boolean bol = result(x);
-        //if (!bol) {
-        //    finalResponse = "no";
-        //}
-        //resultArray[0] = Integer.toString(x);
-        //resultArray[1] = finalResponse;
+    public String[][] getData() {
+        String[][] resultArray = new String[3][2];
+        for (var i = 0; i < 3; i++) {
+            int num = Utils.getRandomNum(2, 4997);
+            resultArray[i][0] = Integer.toString(num);
+            resultArray[i][1] = result(num) ? "yes" : "no";
+        }
         return resultArray;
     }
 }

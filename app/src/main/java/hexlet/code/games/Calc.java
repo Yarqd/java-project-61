@@ -5,41 +5,33 @@ import hexlet.code.Game;
 import java.util.Random;
 
 public class Calc implements Game {
+    public static int result(int numberOne, int numberTwo, int arithmetic) {
+        if (arithmetic == 0) {
+            return numberOne + numberTwo;
+        } else if (arithmetic == 1) {
+            return numberOne - numberTwo;
+        } else {
+            return numberOne * numberTwo;
+        }
+    }
     @Override
     public String getRules() {
         return "What is the result of the expression?";
     }
 
     @Override
-    public String[] getData() {
-        String[] resultArray = new String[2];
-        Random random = new Random();
-        int numberOne = random.nextInt(100);
-        int numberTwo = random.nextInt(100);
-        int result = 0;
-        final String add = "+";
-        final String sub = "-";
-        final String multi = "*";
-        String[] ops = {add, sub, multi};
-        int arithmetic = random.nextInt(ops.length);
-        switch (ops[arithmetic]) {
-            case add:
-                result = numberOne + numberTwo;
-                break;
-            case sub:
-                result = numberOne - numberTwo;
-                break;
-            case multi:
-                result = numberOne * numberTwo;
-                break;
-            default:
-                throw new RuntimeException("Something went wrong");
-        }
+    public String[][] getData() {
+        String[][] resultArray = new String[3][2];
+        for (var i = 0; i < 3; i++) {
+            Random random = new Random();
+            int numberOne = random.nextInt(100);
+            int numberTwo = random.nextInt(100);
+            String[] ops = {"+", "-", "*"};
+            int arithmetic = random.nextInt(ops.length);
 
-//        Scanner scanner = new Scanner(System.in);
-//        int response = scanner.nextInt();
-        resultArray[0] = numberOne + " " + ops[arithmetic] + " " + numberTwo;
-        resultArray[1] = String.valueOf(result);
+            resultArray[i][0] = numberOne + " " + ops[arithmetic] + " " + numberTwo;
+            resultArray[i][1] = String.valueOf(result(numberOne, numberTwo, arithmetic));
+        }
         return resultArray;
     }
 }

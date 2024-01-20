@@ -10,8 +10,8 @@ public class Utils {
         return result;
     }
 
-    public static int getRandomNum(int MIN_RANGE, int MAX_RANGE) {
-        int result = random.nextInt(MAX_RANGE) + MIN_RANGE;
+    public static int getRandomNum(int minRange, int maxRange) {
+        int result = random.nextInt(maxRange) + minRange;
         return result;
     }
 }

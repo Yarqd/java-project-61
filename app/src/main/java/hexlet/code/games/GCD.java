@@ -18,17 +18,15 @@ public class GCD implements Game {
         return "Find the greatest common divisor of given numbers.";
     }
     @Override
-    public String[] getData() {
-        String[] resultArray = new String[2];
-        Random random = new Random();
-        int numberOne = random.nextInt(98) + 1;
-        int numberTwo = random.nextInt(98) + 1;
-//        System.out.println("Question: " + numberOne + " " + numberTwo);
-//        System.out.print("Your answer: ");
-//        Scanner scanner = new Scanner(System.in);
-//        int response = scanner.nextInt();
-        resultArray[0] = numberOne + " " + numberTwo;
-        resultArray[1] = Integer.toString(findGCD(numberOne, numberTwo));
+    public String[][] getData() {
+        String[][] resultArray = new String[3][2];
+        for (var i = 0; i < 3; i++) {
+            Random random = new Random();
+            int numberOne = random.nextInt(98) + 1;
+            int numberTwo = random.nextInt(98) + 1;
+            resultArray[i][0] = numberOne + " " + numberTwo;
+            resultArray[i][1] = Integer.toString(findGCD(numberOne, numberTwo));
+        }
         return resultArray;
     }
 }
