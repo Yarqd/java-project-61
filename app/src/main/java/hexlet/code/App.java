@@ -1,8 +1,8 @@
 package hexlet.code;
 
 import hexlet.code.games.Calc;
-import hexlet.code.games.GCD;
 import hexlet.code.games.Even;
+import hexlet.code.games.GreatestCommonDivisor;
 import hexlet.code.games.Progression;
 import hexlet.code.games.SimpleNumber;
 
@@ -31,19 +31,19 @@ public class App {
                 Cli.showGreetin();
                 break;
             case EVEN:
-                Engine.run(new Even());
+                Even.start();
                 break;
             case CALC:
-                Engine.run(new Calc());
+                Calc.start();
                 break;
             case GCD:
-                Engine.run(new GCD());
+                GreatestCommonDivisor.start();
                 break;
             case PROGRESSION:
-                Engine.run(new Progression());
+                Progression.start();
                 break;
             case PRIME:
-                Engine.run(new SimpleNumber());
+                SimpleNumber.start();
                 break;
             default:
                 break;

@@ -1,9 +1,9 @@
 package hexlet.code.games;
 
-import hexlet.code.Game;
+import hexlet.code.Engine;
 import hexlet.code.Utils;
 
-public class SimpleNumber implements Game {
+public class SimpleNumber {
     public static boolean result(int a) {
         boolean result = true;
         for (int j = 2; j < a / 2; j++) {
@@ -14,20 +14,15 @@ public class SimpleNumber implements Game {
         return result;
     }
 
-    @Override
-    public String getRules() {
-        return "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
-    }
-
-    @Override
-    public String[][] getData() {
+    public static void start() {
+        String rules = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
         String[][] resultArray = new String[3][2];
         for (var i = 0; i < 3; i++) {
             int num = Utils.getRandomNum(2, 4997);
             resultArray[i][0] = Integer.toString(num);
             resultArray[i][1] = result(num) ? "yes" : "no";
         }
-        return resultArray;
+        Engine.run(rules, resultArray);
     }
 }
 

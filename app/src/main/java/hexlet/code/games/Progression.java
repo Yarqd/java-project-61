@@ -1,12 +1,12 @@
 package hexlet.code.games;
 
-import hexlet.code.Game;
+import hexlet.code.Engine;
 import hexlet.code.Utils;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Progression implements Game {
+public class Progression {
     public static String[] progression(int length, int step, int hidden) {
 
         String[] result = new String[2]; //Создали результирующий массив
@@ -30,35 +30,18 @@ public class Progression implements Game {
         result[0] = String.join(delimiter, strings); //Должна быть распечатана прогрессия
         return result;
     }
-    @Override
-    public String getRules() {
-        return "What number is missing in the progression?";
-    }
 
-    @Override
-    public String[][] getData() {
+    public static void start() {
+        String rules = "What number is missing in the progression?";
         String[][] resultArray = new String[3][2];
         for (var i = 0; i < 3; i++) {
             int progressionlength = Utils.getRandomNum(5, 7);
             int progressionStep = Utils.getRandomNum(2, 17);
             int hiddenCell = Utils.hiddenCell(progressionlength);
-//            int[] numbers = new int[progressionlength];
-//            numbers[0] = progressionStep;
-//            for (int j = 1; j < numbers.length; j++) {
-//                numbers[j] = numbers[j - 1] + progressionStep;
-//            }
-//            var task = new StringBuilder();
-//            for (int q = 0; q < hiddenCell; q++) {
-//                task.append(numbers[q] + " ");
-//            }
-//            task.append(".. ");
-//            for (int q = hiddenCell + 1; q < numbers.length; q++) {
-//                task.append(numbers[q] + " ");
-//            }
             String[] result = progression(progressionlength, progressionStep, hiddenCell);
             resultArray[i][0] = result[0];
             resultArray[i][1] = result[1];
         }
-        return resultArray;
+        Engine.run(rules, resultArray);
     }
 }
