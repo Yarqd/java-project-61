@@ -1,30 +1,28 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
-//import hexlet.code.Game;
-
-import java.util.Random;
+import hexlet.code.Utils;
 
 public class Even {
-    public static boolean parityCheck(int randomNumber) {
+    public static boolean parityChecking(int randomNumber) {
         return randomNumber % 2 == 0;
+    }
+
+    private static String[] generateRoundData() {
+        int randomNumber = Utils.getRandomNum(0, 99);
+        String result = (parityChecking(randomNumber)) ? "yes" : "no";
+        String[] round = new String[2];
+        round[0] = Integer.toString(randomNumber);
+        round[1] = result;
+        return round;
     }
 
     public static void start() {
         String rules = "Answer 'yes' if the number is even, otherwise answer 'no'.";
-        String[][] resultArray = new String[3][2];
+        String[][] rounds = new String[3][2];
         for (var i = 0; i < 3; i++) {
-            String result;
-            Random random = new Random();
-            int randomNumber = random.nextInt(100);
-            if (parityCheck(randomNumber)) {
-                result = "yes";
-            } else {
-                result = "no";
-            }
-            resultArray[i][0] = Integer.toString(randomNumber);
-            resultArray[i][1] = result;
+            rounds[i] = generateRoundData();
         }
-        Engine.run(rules, resultArray);
+        Engine.run(rules, rounds);
     }
 }
