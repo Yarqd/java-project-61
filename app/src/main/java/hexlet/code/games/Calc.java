@@ -18,8 +18,9 @@ public class Calc {
     }
 
     private static String[] generateRoundData() {
-        int numberOne = Utils.getRandomNum(0, 100);
-        int numberTwo = Utils.getRandomNum(0, 100);
+        final int maxRange = 100;
+        int numberOne = Utils.getRandomNum(0, maxRange);
+        int numberTwo = Utils.getRandomNum(0, maxRange);
         Character[] ops = {'+', '-', '*'};
         int operation = Utils.getRandomNum(0, ops.length);
         String[] round = new String[2];
@@ -29,11 +30,12 @@ public class Calc {
     }
 
     public static void start() {
+        final int rounds = 3;
         String rules =  "What is the result of the expression?";
-        String[][] rounds = new String[3][2];
-        for (var i = 0; i < 3; i++) {
-            rounds[i] = generateRoundData();
+        String[][] roundsData = new String[rounds][2];
+        for (var i = 0; i < rounds; i++) {
+            roundsData[i] = generateRoundData();
         }
-        Engine.run(rules, rounds);
+        Engine.run(rules, roundsData);
     }
 }

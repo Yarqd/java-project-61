@@ -14,8 +14,9 @@ public class GreatestCommonDivisor {
     }
 
     private static String[] generateRoundData() {
-        int numberOne = Utils.getRandomNum(1, 99);
-        int numberTwo = Utils.getRandomNum(1, 99);
+        final int maxRange = 100;
+        int numberOne = Utils.getRandomNum(1, maxRange);
+        int numberTwo = Utils.getRandomNum(1, maxRange);
         String[] round = new String[2];
         round[0] = numberOne + " " + numberTwo;
         round[1] = Integer.toString(findGCD(numberOne, numberTwo));
@@ -23,11 +24,12 @@ public class GreatestCommonDivisor {
     }
 
     public static void start() {
+        final int rounds = 3;
         String rules = "Find the greatest common divisor of given numbers.";
-        String[][] rounds = new String[3][2];
-        for (var i = 0; i < 3; i++) {
-            rounds[i] = generateRoundData();
+        String[][] roundsData = new String[rounds][2];
+        for (var i = 0; i < rounds; i++) {
+            roundsData[i] = generateRoundData();
         }
-        Engine.run(rules, rounds);
+        Engine.run(rules, roundsData);
     }
 }

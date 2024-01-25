@@ -16,7 +16,6 @@ public class Engine {
         System.out.println();
         System.out.println("Hello, " + name + "!");
         System.out.println(rules);
-        //String[][] data = game.getData();
         for (var i = 0; i < rounds; i++) {
             System.out.println("Question: " + data[i][question]);
             System.out.print("Your answer: ");

@@ -15,7 +15,8 @@ public class SimpleNumber {
     }
 
     private static String[] generateRoundData() {
-        int num = Utils.getRandomNum(2, 4997);
+        final int maxNum = 4997;
+        int num = Utils.getRandomNum(2, maxNum);
         String[] round = new String[2];
         round[0] = Integer.toString(num);
         round[1] = result(num) ? "yes" : "no";
@@ -23,12 +24,13 @@ public class SimpleNumber {
     }
 
     public static void start() {
+        final int rounds = 3;
         String rules = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
-        String[][] rounds = new String[3][2];
-        for (var i = 0; i < 3; i++) {
-            rounds[i] = generateRoundData();
+        String[][] roundsData = new String[rounds][2];
+        for (var i = 0; i < rounds; i++) {
+            roundsData[i] = generateRoundData();
         }
-        Engine.run(rules, rounds);
+        Engine.run(rules, roundsData);
     }
 }
 

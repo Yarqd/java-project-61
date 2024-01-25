@@ -3,7 +3,7 @@ package hexlet.code;
 import java.util.Random;
 
 public class Utils {
-    static Random random = new Random();
+    private static Random random = new Random();
 
     public static int hiddenCell(int progressionlength) {
         int result = random.nextInt(progressionlength - 1) + 1;

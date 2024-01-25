@@ -9,7 +9,8 @@ public class Even {
     }
 
     private static String[] generateRoundData() {
-        int randomNumber = Utils.getRandomNum(0, 99);
+        final int maxRange = 100;
+        int randomNumber = Utils.getRandomNum(0, maxRange);
         String result = (parityChecking(randomNumber)) ? "yes" : "no";
         String[] round = new String[2];
         round[0] = Integer.toString(randomNumber);
@@ -18,11 +19,12 @@ public class Even {
     }
 
     public static void start() {
+        final int rounds = 3;
         String rules = "Answer 'yes' if the number is even, otherwise answer 'no'.";
-        String[][] rounds = new String[3][2];
-        for (var i = 0; i < 3; i++) {
-            rounds[i] = generateRoundData();
+        String[][] roundsData = new String[rounds][2];
+        for (var i = 0; i < rounds; i++) {
+            roundsData[i] = generateRoundData();
         }
-        Engine.run(rules, rounds);
+        Engine.run(rules, roundsData);
     }
 }

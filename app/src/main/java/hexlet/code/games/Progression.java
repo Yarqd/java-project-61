@@ -19,8 +19,11 @@ public class Progression {
     }
 
     private static String[] generateRoundData() {
-        int progressionlength = Utils.getRandomNum(5, 7);
-        int progressionStep = Utils.getRandomNum(2, 17);
+        final int startProgression = 5;
+        final int lengthProgression = 7;
+        final int maxProgressionStep = 17;
+        int progressionlength = Utils.getRandomNum(startProgression, lengthProgression);
+        int progressionStep = Utils.getRandomNum(2, maxProgressionStep);
         int hiddenCell = Utils.hiddenCell(progressionlength);
         String[] progression = generateProgression(progressionlength, progressionStep, hiddenCell);
         String[] round = new String[2];
@@ -30,11 +33,12 @@ public class Progression {
     }
 
     public static void start() {
+        final int rounds = 3;
         String rules = "What number is missing in the progression?";
-        String[][] rounds = new String[3][2];
-        for (var i = 0; i < 3; i++) {
-            rounds[i] = generateRoundData();
+        String[][] roundsData = new String[rounds][2];
+        for (var i = 0; i < rounds; i++) {
+            roundsData[i] = generateRoundData();
         }
-        Engine.run(rules, rounds);
+        Engine.run(rules, roundsData);
     }
 }
